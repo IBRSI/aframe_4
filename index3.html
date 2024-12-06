@@ -1,1 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Model Viewer AR - VR</title>
+  <meta name="description" content="Model Viewer (VR / AR) • A-Frame">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="info-message.js"></script>
+  <script src="https://unpkg.com/aframe-extras@3.3.0/dist/aframe-extras.min.js"></script>
+  <script src="hide-on-enter-ar.js"></script>
+  <script src="ar-hit-test.js"></script>
+  <script src="model-viewer.js"></script>
+  <script src="background-gradient.js"></script>
+  <style>
+    /* Стили для кнопок */
+    .button-container {
+      position: absolute;
+      top: 10px; /* Расположение кнопок сверху */
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10; /* Убедитесь, что кнопки находятся поверх сцены */
+      display: flex;
+      gap: 10px; /* Промежуток между кнопками */
+    }
+    .btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #4CAF50; /* Зеленый цвет */
+      color: white;
+      transition: background-color 0.3s;
+    }
+    .btn:hover {
+      background-color: #3CB371; /* Темно-зеленый цвет при наведении */
+    }
+  </style>
+</head>
+<body>
+  <div class="button-container">
+    <button class="btn" onclick="window.location.href='index.html'">Первая модель</button>
+    <button class="btn" onclick="window.location.href='index2.html'">Вторая модель</button>
+    <button class="btn" onclick="window.location.href='index3.html'">Третья модель</button>
+  </div>
 
+  <a-scene
+    renderer="colorManagement: true;"
+    info-message="htmlSrc: #messageText"
+    model-viewer="gltfModel: #triceratops; title: Bill">
+    <a-assets>
+      <a-asset-item id="triceratops"
+        src="sandy.glb"
+        response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+      <a-asset-item id="messageText" src="message.html"></a-asset-item>
+    </a-assets>
+  </a-scene>
+</body>
+</html>
