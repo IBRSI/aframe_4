@@ -48,11 +48,12 @@
   <a-scene
     renderer="colorManagement: true;"
     info-message="htmlSrc: #messageText"
-    model-viewer="gltfModel: #triceratops; title: Bill">
+    model-viewer="gltfModel: #triceratops; title: Sandy">
     <a-assets>
       <a-asset-item id="triceratops"
         src="sandy.glb"
-        response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+        response-type="arraybuffer" crossorigin="anonymous"
+        position="0 -1 -5"></a-asset-item>
       <a-asset-item id="messageText" src="message.html"></a-asset-item>
     </a-assets>
   </a-scene>
