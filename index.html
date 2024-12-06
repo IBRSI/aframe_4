@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="ru">
 <head>
   <meta charset="utf-8">
   <title>Model Viewer AR - VR</title>
@@ -8,31 +9,52 @@
   <script src="info-message.js"></script>
   <script src="https://unpkg.com/aframe-extras@3.3.0/dist/aframe-extras.min.js"></script>
   <script src="hide-on-enter-ar.js"></script>
-  
   <script src="ar-hit-test.js"></script>
   <script src="model-viewer.js"></script>
   <script src="background-gradient.js"></script>
+  <style>
+    /* Стили для кнопок */
+    .button-container {
+      position: absolute;
+      top: 10px; /* Расположение кнопок сверху */
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10; /* Убедитесь, что кнопки находятся поверх сцены */
+      display: flex;
+      gap: 10px; /* Промежуток между кнопками */
+    }
+    .btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #4CAF50; /* Зеленый цвет */
+      color: white;
+      transition: background-color 0.3s;
+    }
+    .btn:hover {
+      background-color: #45a049; /* Темно-зеленый цвет при наведении */
+    }
+  </style>
 </head>
 <body>
-<a-scene
-  renderer="colorManagement: true;"
-  info-message="htmlSrc: #messageText"
-  model-viewer="gltfModel: #triceratops; title: Bill">
-  <a-assets>
-    <!--
-      Model source: https://sketchfab.com/3d-models/triceratops-d16aabe33dc24f8ab37e3df50c068265
-      Model author: https://sketchfab.com/VapTor
-      Model license: Sketcfab Standard
-    -->
-    <a-asset-item id="triceratops"
-      src="bill.glb"
-      response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+  <div class="button-container">
+    <button class="btn" onclick="window.location.href='page1.html'">Страница 1</button>
+    <button class="btn" onclick="window.location.href='page2.html'">Страница 2</button>
+    <button class="btn" onclick="window.location.href='page3.html'">Страница 3</button>
+  </div>
 
- 
-    
-    <a-asset-item id="messageText" src="message.html"></a-asset-item>
-  </a-assets>
-</a-scene>
+  <a-scene
+    renderer="colorManagement: true;"
+    info-message="htmlSrc: #messageText"
+    model-viewer="gltfModel: #triceratops; title: Bill">
+    <a-assets>
+      <a-asset-item id="triceratops"
+        src="bill.glb"
+        response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
+      <a-asset-item id="messageText" src="message.html"></a-asset-item>
+    </a-assets>
+  </a-scene>
 </body>
 </html>
-
