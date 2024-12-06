@@ -48,16 +48,13 @@
   <a-scene
     renderer="colorManagement: true;"
     info-message="htmlSrc: #messageText"
-    model-viewer="gltfModel: #triceratops; title: Cat">
+    model-viewer="gltfModel: #triceratops; title: Bill">
     <a-assets>
       <a-asset-item id="triceratops"
         src="kit.glb"
         response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
       <a-asset-item id="messageText" src="message.html"></a-asset-item>
     </a-assets>
-
-    <!-- Добавляем 3D модель с измененной позицией -->
-    <a-entity gltf-model="#triceratops" position="0 -1 -5"></a-entity>
   </a-scene>
 </body>
 </html>
