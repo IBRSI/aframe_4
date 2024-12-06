@@ -52,12 +52,12 @@
     <a-assets>
       <a-asset-item id="triceratops"
         src="kit.glb"
-        response-type="arraybuffer" crossorigin="anonymous"
-        position="0 0 -5"></a-asset-item>
+        response-type="arraybuffer" crossorigin="anonymous"></a-asset-item>
       <a-asset-item id="messageText" src="message.html"></a-asset-item>
     </a-assets>
-  </a-scene>
-  <a-entity gltf-model="#triceratops" position="0 0 -5"></a-entity>
+
+    <!-- Добавляем 3D модель с измененной позицией -->
+    <a-entity gltf-model="#triceratops" position="0 -1 -5"></a-entity>
   </a-scene>
 </body>
 </html>
